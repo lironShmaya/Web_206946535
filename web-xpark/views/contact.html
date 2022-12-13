@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact Us</title>
+  <link rel="stylesheet" href="../static/css/contact.css">
+</head>
+<body>
+
+<nav class="container">
+    <div class="banner">
+      <h1>Contact Us</h1>
+      <li><a href="../views/map.html" class="btn">Search Parking Lots</a></li>
+      <li><a href="../views/profile.html" class="btn">Profile</a></li>
+      <li><a href="../views/contact.html" class="btn">Contact Us</a></li>
+      <li><a href="../views/signin.html" class="btn">Logout</a></li>
+    </ul>
+      </div>
+    </nav> <!--Banner-->
+
+<div class="contact">
+  <form action="action_page.php">
+    <label for="fname">First Name</label>
+    <input type="text" id="fname" name="firstname" placeholder="Your name..">
+
+    <label for="lname">Last Name</label>
+    <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+
+    <label for="mail">Last Name</label>
+    <input type="text" id="mail" name="email" placeholder="Your e-mail..">
+
+    <label for="country">Country</label>
+    <select id="country" name="country">
+      <option value="australia">Australia</option>
+      <option value="canada">Canada</option>
+      <option value="usa">Israel</option>
+      <option value="usa">Germany</option>
+      <option value="usa">France</option>
+      <option value="usa">Switzerland</option>
+      <option value="usa">Spain</option>
+      <option value="usa">Portugal</option>
+    </select>
+    <label for="subject">Subject</label>
+    <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+    <input type="submit" value="Submit">
+  </form>
+</div>
+</body>
+</html>

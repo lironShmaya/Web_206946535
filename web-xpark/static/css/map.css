@@ -1,0 +1,74 @@
+* {
+  padding: 1vm;
+  margin: 1vm;
+}
+
+
+.banner {
+    display: flex;
+    width: 100%;
+    height: 200px;
+    background-color: #7F68F5;
+    color: White;
+    font-family: 'Heebo';
+    font-size: 45px;
+    align-items: center;
+  }
+  .banner .btn {
+    width: 70px;
+    height: 40px;
+    border-radius: 10px;
+    border: none;
+    background-color: #7F68F5;
+    font-size: 15px;
+    color: black;
+    font-family: Heebo;
+  }
+  
+  h1 {
+    flex: 1;
+    text-align: center;
+  }
+  #map {
+        height: 729px;
+        width: 100%;
+      }
+  html,
+  body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  .SaveB {
+    border: none;
+    border-radius: 10px;
+    background-color: #7F68F5;
+    color: white;
+    font-family: Heebo;
+  }
+  
+  .cancelB {
+    border: none;
+    border-radius: 10px;
+    background-color: #7F68F5;
+    color: white;
+    font-family: Heebo;
+  }
+  
+  /* .com {
+    display: flex;
+  } */
+  
+  li {
+    list-style-type: none;
+    display: inline;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.active {
+    background-color: aqua;
+}
