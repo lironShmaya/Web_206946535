@@ -8,3 +8,4 @@
 5. Sign up page
 6. Profile page (with dynamic placeholders that contain the personal details that were filled up in the sign-up page)
 7. Spinner animation when loading between pages.
+8. All relevent pages contains form validations.
