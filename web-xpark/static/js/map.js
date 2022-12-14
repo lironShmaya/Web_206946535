@@ -7,10 +7,12 @@ function initMap() {
     // New Map
     let map = new google.maps.Map(document.getElementById('map'), options);
 
+
+
     addMarker({coords: {lat: 32.0761473, lng: 34.7671822},
       content:'<h1>Gan London Parking Lot </h1> <p> Frishman 52, Tel Aviv</p> <button onclick="saveSpot()" class="SaveB">Save Spot</button> ' +
         '<button onclick="cancelSpot()" class="cancelB">Cancel Saved Spot</button>',
-    });
+    },1);
     addMarker({coords: {lat: 32.0763204, lng: 34.7650351},
       content:'<h1>Central Park Parking Lot</h1> <p>Hayarkon 78, Tel Aviv</p> <button onclick="saveSpot()" class="SaveB">Save Spot</button>' +
         '<button onclick="cancelSpot()" class="cancelB">Cancel Saved Spot</button>',
@@ -53,7 +55,7 @@ function initMap() {
     });
 
     //Add Marker Function
-    function addMarker(props) {
+    function addMarker(props, capacity) {
         let marker = new google.maps.Marker({position: props.coords,map});
 
       // Check Content
