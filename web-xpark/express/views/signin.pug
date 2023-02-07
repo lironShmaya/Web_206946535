@@ -1,0 +1,30 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    title XPark
+    link(rel="stylesheet", href="css/css.css")
+    script(defer, src="js/signin.js")
+  body
+    .container
+      .banner
+        h1 XPark
+    // Banner
+    .doc
+      h2 Login
+      .form
+        form(type="submit", name="signin", onsubmit="return validateForm()", method="post", action="/signin")
+          label(for="email")
+          input#email.input(type="email", name="email", placeholder="Email Address", required)
+          br
+          label(for="pass")
+          input#pass.input(type="password", name="pass", placeholder="Password", required)
+          br
+          label#already Don&apos;t have an account yet? 
+            a(href="http://localhost:3000/signup", style="color: #7F68F5") Sign up
+          button#submit(type="submit") Sign-In 
+      // Form
+    // Doc
+    // Container
+    .spinner
+      div

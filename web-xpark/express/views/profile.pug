@@ -1,0 +1,72 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    title Profile
+    link(rel='stylesheet', href='css/profile.css')
+    script(defer='', src='js/profile.js')
+  body
+    .container
+      .box
+        .parkingHistory
+          h1 Parking History
+          .components
+            .parkingLot
+              h3 Parking Lot
+              li Kanarit Parking lot
+              br
+              li Gan London Parking lot
+              br
+              li Central Park Parking lot
+              br
+            .date
+              h3 Date
+              li 20/03/2022
+              |  
+              br
+              li 2w8/04/2022
+              |  
+              br
+              li 20/05/2022
+              |  
+              br
+        |  
+        br
+        |  
+        br
+        |  
+        br
+        |  
+        br
+        |  
+        br
+        |  
+        br
+        |  
+        br
+        |  
+        br
+        |  
+        br
+        |  
+        hr
+        .return
+          a.button(href='http://localhost:3000/map') Find your next parking spot!
+        .contact
+          a.button(href='http://localhost:3000/contact') Contact Us
+        .logout
+          a.button(href='http://localhost:3000/signin') Logout
+      .About
+        ul
+          h1 about
+        ul
+          h3 Full Name
+          li#fullName {{FullName}}
+        ul
+          h3 Username
+          li#username {{UserName}}
+        ul
+          h3 Contact
+          li#contact {{Email}}

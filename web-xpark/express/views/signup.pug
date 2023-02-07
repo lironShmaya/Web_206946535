@@ -1,0 +1,46 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    title XPark
+    link(rel="stylesheet", href="css/css.css")
+    script(defer, src="js/signup.js")
+  body
+    nav.container
+      .banner
+        h1 XPark
+    // Banner
+    .doc
+      h2 Sign-Up
+      .form
+        form(name="signup", onsubmit="return validateForm()", method="post", type="submit", action="/signup")
+          label(for="fullname")
+          input#fullname.input(type="text", name="fullName", placeholder="Full Name", required)
+          br
+          label(for="username")
+          input#username.input(type="text", name="username", placeholder="Username", required)
+          br
+          label(for="contact")
+          input#contact.input(type="number", name="contact", placeholder="Contact Number", required)
+          br
+          label(for="email")
+          input#email.input(type="email", name="email", placeholder="Email Address", required)
+          br
+          label(for="pass")
+          input#pass.input(type="password", name="pass", placeholder="Password", required)
+          br
+          .signup
+            input(name="IAgree", type="checkbox")
+            label(id, for="IAgree") I agree to the 
+              a#IAgree(href="www.google.com", required) Terms and Services
+            br
+          // <label id="already">Already have an account?  <a href="../views/signin.html" style="color: #7F68F5"> Sign in</a></label>
+          label#already Already have an account?
+            a(href="http://localhost:3000/signin", style="color: #7F68F5")  Sign in
+          button#submit(type="submit") Sign-Up
+      // Form
+    // Doc
+    // Container
+    .spinner1
+      div
+      div

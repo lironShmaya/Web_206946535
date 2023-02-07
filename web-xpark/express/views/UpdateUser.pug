@@ -1,0 +1,23 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Update User
+  body
+    h1 Update User By Full Name
+    form(action="/update", method="post")
+      label(for="fname")
+      input#fname(type="text", name="fname", placeholder="Full Name")
+      br
+      label(for="email")
+      input#email(type="text", name="email", placeholder="Email")
+      br
+      label(for="contact")
+      input#contact(type="text", name="contact", placeholder="Contact Number")
+      br
+      label(for="pass")
+      input#pass(type="text", name="pass", placeholder="Password")
+      br
+      input(type="submit", value="Update")

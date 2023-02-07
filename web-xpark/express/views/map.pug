@@ -1,0 +1,21 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    title XPark
+    link(rel="stylesheet", href="css/css.css")
+    script(src="js/map.js")
+  body
+    nav.banner
+      h1 XPark
+      .com
+        ul
+          li
+            a.btn(href="http://localhost:3000/profile") Profile
+          li
+            a.btn(href="http://localhost:3000/contact") Contact Us
+          li
+            a.btn(href="http://localhost:3000/signin") Logout
+    // Banner
+    #map
+  script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDlne0vVqjK6uOjBJuWRO67FcDYY1nEO70&callback=initMap&v=weekly")

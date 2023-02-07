@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="css/profile.css">
+    <script defer src="js/profile.js"></script>
+</head>
+<body>
+    <div class="container">
+
+        <div class="box">
+
+          <div class="parkingHistory">
+            <h1>Parking History</h1>
+
+              <div class="components">
+
+                 <div class="parkingLot">
+                <h3>Parking Lot</h3>
+                  <li>Kanarit Parking lot</li><br>
+                  <li>Gan London Parking lot</li><br>
+                  <li>Central Park Parking lot</li><br>
+                </div>
+                <div class="date">
+                 <h3>Date</h3>
+                  <li>20/03/2022</li> <br>
+                  <li>28/04/2022</li> <br>
+                  <li>20/05/2022</li> <br>
+                </div>
+
+            </div>
+
+          </div> <br> <br> <br> <br> <br> <br> <br> <br> <br> <hr>
+
+          <div class="return">
+          <a href="http://localhost:3000/map" class="button">Find your next parking spot!</a>
+          </div>
+          <div class="contact">
+          <a href="http://localhost:3000/contact" class="button">Contact Us</a>
+          </div>
+          <div class="logout">
+          <a href="http://localhost:3000/signin" class="button">Logout</a>
+          </div>
+        </div>
+        <div class="About">
+            <ul>
+                <h1>about</h1>
+            </ul>
+            <ul>
+                <h3>Full Name</h3>
+                  <li id="fullName">{{FullName}}</li>
+            </ul>
+            <ul>
+                <h3>Username</h3>
+                <li id="username">{{UserName}}</li>
+            </ul>
+            <ul>
+                <h3>Contact</h3>
+                <li id="contact">{{Email}}</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

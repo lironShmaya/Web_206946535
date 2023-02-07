@@ -1,0 +1,42 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    title Contact Us
+    link(rel="stylesheet", href="css/css.css")
+    script(defer, src="js/contact.js")
+  body
+    nav.container
+      .com
+        ul
+          h1 Contact Us
+          li
+            a.btn(href="http://localhost:3000/profile") Profile
+          li
+            a.btn(href="http://localhost:3000/signin") Logout
+          li
+            a.btn(href="http://localhost:3000/map") Search Parking Lots
+    // Banner
+    .contact
+      form(action="/contact", method="post")
+        label(for="fname") First Name
+        input#fname(type="text", name="fname", placeholder="Your name..", required)
+        label(for="lname") Last Name
+        input#lname(type="text", name="lname", placeholder="Your last name..", required)
+        label(for="mail") Email
+        br
+        input#mail(type="email", name="mail", placeholder="Your e-mail..", required)
+        br
+        label(for="country") Country
+        select#country(name="country")
+          option(value="australia") Australia
+          option(value="canada") Canada
+          option(value="usa") Israel
+          option(value="usa") Germany
+          option(value="usa") France
+          option(value="usa") Switzerland
+          option(value="usa") Spain
+          option(value="usa") Portugal
+        label(for="subject") Subject
+        textarea#subject(name="subject", placeholder="Write something..", style="height:200px", required)
+        input(type="submit", value="Submit")

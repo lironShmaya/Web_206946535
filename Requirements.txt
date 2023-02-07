@@ -1,0 +1,70 @@
+Database operations
+
+/CreateTableUsers - Create Table Users
+/CreateTableOwners - Create Table Owners
+/CreateTableParkinglot - Create Table Parkinglot
+/CreateTableParkingSpot - Create Table Parkingspot
+/InsertDataUsers - Insert Data into Users Table
+/InsertDataOwners - Insert Data into Owners Table
+/InsertDataParkinglot - Insert Data into Parkinglot Table
+/InsertDataParkingspot - Insert Data into Parkingspot Table
+/ShowTableUsers - Show Users Table
+/ShowTableOwners - Show Owners Table
+/ShowTableParkinglot - Show Parkinglot Table
+/ShowTableParkingspot - Show Parkingspot Table
+/DropTableUsers - Drop Users Table
+/DropTableOwners - Drop Owners Table
+/DropTableParkinglot - Drop Parkinglot Table
+/DropTableParkingspot - Drop Parkingspot Table
+
+Required Modules
+
+express
+body-parser
+cookie-parser
+csvtojson
+csv-parse
+pug
+sql
+fs
+
+Syntax of table creations:
+
+- Create tabke users:
+	`CREATE TABLE IF NOT EXISTS Users (
+        ID int primary key auto_increment,
+        fullName VARCHAR(255) not null,
+        username VARCHAR(255) not null,
+        email VARCHAR (255) not null,
+        pass varchar (255) not null,
+        contact VARCHAR(255) not null
+        ) ENGINE=InnoDB DEFAULT CHARSET=utf8;`
+
+- Create table parkinglot:
+	`CREATE TABLE IF NOT EXISTS parkingLot (
+        ID int primary key auto_increment,
+        Name varchar(255) not null,
+        Location varchar(255) not null,
+        Capacity int not null
+        ) ENGINE=InnoDB DEFAULT CHARSET=utf8;`
+
+- Create table parkingSpot:
+	`CREATE TABLE IF NOT EXISTS parkingSpots (
+        ID int primary key auto_increment,
+        floor int not null,
+        occupied tinyint not null
+        ) ENGINE=InnoDB DEFAULT CHARSET=utf8;`
+
+- Create table owners:
+	`CREATE TABLE IF NOT EXISTS owners (
+            ID int primary key auto_increment,
+            fullName varchar(255) not null,
+            email varchar(255) not null,
+            password varchar(255) not null,
+            contactNumber varchar(255) not null
+            ) ENGINE=InnoDB DEFAULT CHARSET=utf8;`
+	
+	
+	
+	
+
