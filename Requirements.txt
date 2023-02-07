@@ -16,6 +16,7 @@ Database operations
 /DropTableOwners - Drop Owners Table
 /DropTableParkinglot - Drop Parkinglot Table
 /DropTableParkingspot - Drop Parkingspot Table
+/deleteAll - Drop all tables at once
 
 Required Modules
 
@@ -30,7 +31,7 @@ fs
 
 Syntax of table creations:
 
-- Create tabke users:
+- Create table users:
 	`CREATE TABLE IF NOT EXISTS Users (
         ID int primary key auto_increment,
         fullName VARCHAR(255) not null,
