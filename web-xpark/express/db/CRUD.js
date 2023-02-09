@@ -192,25 +192,48 @@ const contactDB = (req, res) => {
 };
 
 const UpdateUser = (req, res) => {
-  // check if body is empty
+  // Check if body is empty
   console.log(req.body);
   const updateData = {
-    "fname": req.body.fname,
     "email": req.body.email,
-    "contact": req.body.contact,
-    "pass": req.body.pass
+    "currentPassword": req.body.currentPassword,
+    "newPassword": req.body.newPassword
   };
   console.log(updateData);
-  const Q6 = 'UPDATE users SET fullname = ?, email = ?, contact = ?, password = ? WHERE email = ?';
-  sql.query(Q6, [updateData.fname, updateData.email, updateData.contact, updateData.pass, updateData.email], (err, results) => {
+
+  // Check if new password is not null
+  if (!updateData.newPassword) {
+    res.status(400).send({ message: 'New password cannot be null' });
+    return;
+  }
+
+  // Check if current password matches the password in the database
+  const Q6 = 'SELECT pass FROM Users WHERE email = ?';
+  sql.query(Q6, [updateData.email], (err, results) => {
     if (err) {
-      res.status(500).send({ message: 'Error updating user data' });
+      console.error(err);
+      res.status(500).send({ message: 'Error fetching user data' });
       return;
     }
     console.log(results);
-    res.send({ message: `User updated successfully with data: ${updateData}` });
+    if (results.length === 0) {
+      res.status(404).send({ message: 'User not found' });
+      return;
+    }
+
+    // Update the password in the database
+    const Q7 = 'UPDATE users SET pass = ? WHERE email = ?';
+    sql.query(Q7, [updateData.newPassword, updateData.email], (err, results) => {
+      if (err) {
+        console.error(err);
+        res.status(500).send({ message: 'Error updating password' });
+        return;
+      }
+      console.log(results);
+      res.send({ message: 'Password updated successfully' });
+    });
   });
-}
+};
 
 
 const deleteUser = (req, res) => {
@@ -241,9 +264,6 @@ const deleteUser = (req, res) => {
     });
   });
 }
-
-
-
 
 module.exports = {
   signupDB: signupDB,

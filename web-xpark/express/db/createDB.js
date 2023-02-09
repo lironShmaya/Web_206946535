@@ -2,6 +2,10 @@
 const sql = require('./db');
 const path = require('path');
 const csv = require('csvtojson');
+const fs = require('fs');
+
+
+
 
 // Users Table
 
@@ -29,8 +33,9 @@ const CreateTableUsers = (req, res) => {
 
 const InsertDataUsers = (req, res) => {
     var Q2 = "INSERT INTO users SET ?";
-    const csvFilePath = path.join(__dirname, "./content/users.csv");
-    csv()
+    const csvFilePath = path.resolve(__dirname, '../content/users.csv');
+    console.log(csvFilePath)
+        csv()
         .fromFile(csvFilePath)
         .then((jsonObj) => {
             jsonObj.forEach(element => {
@@ -52,21 +57,22 @@ const InsertDataUsers = (req, res) => {
         });
 
     res.send("data inserted");
-
 };
+
 const ShowTableUsers = (req, res) => {
-    var Q3 = "SELECT * FROM users";
-    sql.query(Q3, (err, mySQLres) => {
+    var Q1 = "SELECT * FROM users";
+    sql.query(Q1, (err, mySQLres) => {
         if (err) {
-            console.log("error in showing table ", err);
-            res.send("error in showing table ");
+            console.log("error ", err);
+            res.status(400).send({ message: "error in fetching table data" });
             return;
         }
-        console.log("showing table");
+        console.log('showing table');
         res.send(mySQLres);
         return;
     })
-};
+}
+
 const DropTableUsers = (req, res) => {
     var Q4 = "DROP TABLE users";
     sql.query(Q4, (err, mySQLres) => {
@@ -80,10 +86,6 @@ const DropTableUsers = (req, res) => {
         return;
     })
 }
-
-
-
-
 
 // Parkinglot Table
 
@@ -110,7 +112,7 @@ const CreateTableParkinglot = (req, res) => {
 
 const InsertDataParkinglot = (req, res) => {
     var Q2 = "INSERT INTO parkinglot SET ?";
-    const csvFilePath = path.join(__dirname, "./content/parkinglot.csv");
+    const csvFilePath = path.join(__dirname, "../content/parkinglot.csv");
     csv()
         .fromFile(csvFilePath)
         .then((jsonObj) => {
@@ -187,7 +189,7 @@ const CreateTableParkingSpot = (req, res) => {
 
 const InsertDataParkingspot = (req, res) => {
     var Q2 = "INSERT INTO parkingSpots SET ?";
-    const csvFilePath = path.join(__dirname, "./content/parkingspot.csv");
+    const csvFilePath = path.join(__dirname, "../content/parkingspot.csv");
     csv()
         .fromFile(csvFilePath)
         .then((jsonObj) => {
@@ -263,7 +265,7 @@ const CreateTableOwners = (req, res) => {
 }
 const InsertDataOwners = (req, res) => {
     var Q2 = "INSERT INTO owners SET ?";
-    const csvFilePath = path.join(__dirname, "./content/owners.csv");
+    const csvFilePath = path.join(__dirname, "../content/owners.csv");
     csv()
         .fromFile(csvFilePath)
         .then((jsonObj) => {
@@ -362,8 +364,6 @@ const dropAllTables = (req, res) => {
         });
     });
 };
-
-
 
 module.exports = {
     CreateTableUsers: CreateTableUsers,
