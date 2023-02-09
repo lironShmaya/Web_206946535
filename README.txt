@@ -12,6 +12,7 @@ Description:
 - The user can sign up / sign in in to the application with his own credentials.
 - The credentials will be automatically saved in the DB.
 - The user can send a message through the contact us page.
+- The user can change his password through his profile page.
 
 Flow:
 
