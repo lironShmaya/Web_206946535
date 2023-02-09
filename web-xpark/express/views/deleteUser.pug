@@ -5,9 +5,13 @@ html(lang="en")
     meta(http-equiv="X-UA-Compatible", content="IE=edge")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     title Delete User
+    link(rel="stylesheet", href="css/css.css")
+
   body
-    h1 Delete User by ID
-    form(action="/delete", method="post")
-      label(for="search")
-      input#search(type="text", name="search")
-      input(type="submit", value="Search")
+  .container
+      .banner
+           h1 Delete User by ID
+  form(action="/delete", method="post")
+    label(for="search")
+    input#search(type="text", name="search" placeholder="Please Enter User ID Here")
+    input(type="submit", value="Delete")
