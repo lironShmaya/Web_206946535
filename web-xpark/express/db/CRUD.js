@@ -220,6 +220,10 @@ const UpdateUser = (req, res) => {
       res.status(404).send({ message: 'User not found' });
       return;
     }
+    if (updateData.currentPassword !== results[0].pass) {
+      res.status(400).send({ message: 'Incorrect current password' });
+      return;
+    }
 
     // Update the password in the database
     const Q7 = 'UPDATE users SET pass = ? WHERE email = ?';
