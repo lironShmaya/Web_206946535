@@ -1,11 +1,7 @@
-
 const sql = require('./db');
 const path = require('path');
 const csv = require('csvtojson');
 const fs = require('fs');
-
-
-
 
 // Users Table
 
@@ -35,7 +31,7 @@ const InsertDataUsers = (req, res) => {
     var Q2 = "INSERT INTO users SET ?";
     const csvFilePath = path.resolve(__dirname, '../content/users.csv');
     console.log(csvFilePath)
-        csv()
+    csv()
         .fromFile(csvFilePath)
         .then((jsonObj) => {
             jsonObj.forEach(element => {

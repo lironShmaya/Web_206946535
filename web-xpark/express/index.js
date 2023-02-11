@@ -9,7 +9,6 @@ const CRUD = require('./db/CRUD')
 const CreateDB = require('./db/createDB')
 const cookieParser = require('cookie-parser')
 const fs = require('fs');
-// const stringify = require('csv-strigify').stringify;
 const { parse } = require('csv-parse');
 const port = 3000;
 
@@ -87,7 +86,6 @@ app.post('/signin', (req, res) => {
     const email = req.query.email // Call the signupDB function from the CRUD module to handle the request
     CRUD.signinDB(req, res, email);
 });
-
 
 //show all users
 app.get('/showUsers', CRUD.showAll);

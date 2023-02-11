@@ -27,7 +27,6 @@ const signupDB = (req, res) => {
   res.cookie('Signed_username', req.body.username);
   res.cookie('Signed_user_email', req.body.email);
 
-
   //run query
 
   const Q1 = "INSERT INTO users SET ?";
@@ -60,8 +59,6 @@ const showAll = (req, res) => {
     return;
   })
 }
-
-
 
 const FindUser = (req, res) => {
   // check if body is empty
@@ -245,7 +242,7 @@ const deleteUser = (req, res) => {
   console.log(req.body);
   const searchData = req.body.search;
   console.log(searchData);
-  
+
   // Check if user with the given ID exists in the database
   const Q7 = 'SELECT * FROM users WHERE id = ?';
   sql.query(Q7, [searchData], (err, results) => {
